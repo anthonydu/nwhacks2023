@@ -23,8 +23,9 @@ export default function StudyBuddies() {
       <main style={{ position: "fixed", top: 0, left: 0, height: "100%", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
         <div style={{ width: 600, height: 400, backgroundColor: "rgba(0, 0, 0, 0.5)", padding: 20, borderRadius: 20, display: "flex" }}>
           <div style={{ flex: 1, backgroundColor: "rgba(255, 255, 255, 0.5)", borderRadius: 20 }}>
-            <div style={{ paddingLeft: 20 }}>
-              <input style={{ width: "100%", height: "100%" , fontSize: 20, backgroundColor: "transparent", border: 0 }} placeholder='Search' />
+            <div style={{ paddingLeft: 20, display: "flex", alignItems: "center" }}>
+              <p className="mb-0" style={{ width: "100%", height: "100%", backgroundColor: "transparent", border: 0, cursor: "pointer" }}>Search</p>
+              <p className="mb-0" style={{ width: "100%", height: "100%", backgroundColor: "transparent", border: 0, cursor: "pointer", lineHeight: 1 }}>Manage Buddies</p>
             </div>
             <div onClick={() => setSelected(0)} style={{ cursor: "pointer", padding: 20, borderBottom: "2px solid black", borderTop: "2px solid black", backgroundColor: `${selected == 0 ? "rgba(255, 255, 255, 0.5)" : ""}` }}>
               <h5 className="mb-0">Anthony Du</h5>
