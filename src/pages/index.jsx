@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import TodoList from '../components/Tasks/TodoList';
 
-export default function Home() {
+export default function Home({ todos }) {
   const [date, setDate] = useState(`${new Date().getHours()}:${("0" + new Date().getMinutes()).slice(-2)}`);
 
   useEffect(() => {
@@ -19,6 +20,9 @@ export default function Home() {
         <div style={{ position: "fixed", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundColor: "rgba(0, 0, 0, 0.5)", borderRadius: 20, padding: 20 }}>
           <p style={{ fontSize: 100, color: "white", lineHeight: 1 }}>{date}</p>
           <p style={{ color: "white", marginBottom: 0 }}>"Action is the foundational key to all success"</p>
+        </div>
+        <div>
+          <TodoList todos={todos} style={{ position: "fixed", left: 20, bottom: 20 }}></TodoList>
         </div>
       </main>
     </>

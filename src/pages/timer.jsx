@@ -90,8 +90,8 @@ export default function Timer() {
           )}
         </CountdownCircleTimer>
         <div style={{ position: "relative", top: "15%" }}>
-          <button onClick={handlePauseStart} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0 }} disabled={isCompleted ? true : false}>{isPlaying ? "Pause" : "Start"}</button>
-          <button onClick={handleCancel} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0 }} disabled={isPlaying ? true : false}>{isCompleted ? "Dismiss" : "Cancel"}</button>
+          <button onClick={handlePauseStart} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0, backgroundColor: "white" }} disabled={isCompleted ? true : false}>{isPlaying ? "Pause" : "Start"}</button>
+          <button onClick={handleCancel} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0, backgroundColor: "white" }} disabled={isPlaying ? true : false}>{isCompleted ? "Dismiss" : "Cancel"}</button>
         </div>
       </main>
     </>

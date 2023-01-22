@@ -24,7 +24,7 @@ export default function LivepeerPortal({ id, setId }) {
           <h3 style={{ color: "white" }}>Livepeer Portal</h3>
           <input ref={inputRef} style={{ width: "500px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0 }} placeholder="Please enter Livepeer Playback ID"></input>
           <p className="mb-0" style={{ color: "red", display: `${isAlert ? "block" : "none" }` }}>The video with this ID is already playing!</p>
-          <button onClick={handleClick} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0 }}>Play Video or Stream</button>
+          <button onClick={handleClick} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0, backgroundColor: "white" }}>Play Video or Stream</button>
         </div>
       </main>
     </>
