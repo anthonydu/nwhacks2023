@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import TodoList from '../components/Tasks/TodoList';
+import { ListGroup } from "react-bootstrap";
+
 
 export default function Home({ todos }) {
   const [date, setDate] = useState(`${new Date().getHours()}:${("0" + new Date().getMinutes()).slice(-2)}`);
@@ -21,8 +23,15 @@ export default function Home({ todos }) {
           <p style={{ fontSize: 100, color: "white", lineHeight: 1 }}>{date}</p>
           <p style={{ color: "white", marginBottom: 0 }}>"Action is the foundational key to all success"</p>
         </div>
-        <div>
-          <TodoList todos={todos} style={{ position: "fixed", left: 20, bottom: 20 }}></TodoList>
+        <div style={{ position: "fixed", left: 20, bottom: 20 }}>
+          <ListGroup className="mb-3 p-0">
+          {todos.map((todo) => (
+            <ListGroup.Item>
+              <p className="mb-0">{todo}</p>
+            </ListGroup.Item>
+          ))
+          }
+        </ListGroup>
         </div>
       </main>
     </>
