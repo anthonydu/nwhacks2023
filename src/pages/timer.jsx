@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
-export default function Home() {
+export default function Timer() {
   const [date, setDate] = useState(`${new Date().getHours()}:${("0" + new Date().getMinutes()).slice(-2)}`);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isCanceled, setIsCanceled] = useState(true);
@@ -11,7 +11,7 @@ export default function Home() {
   const [key, setKey] = useState(0);
   const [h, setH] = useState("00");
   const [m, setM] = useState("00");
-  const [s, setS] = useState(10);
+  const [s, setS] = useState("10");
   const hRef = useRef();
   const mRef = useRef();
   const sRef = useRef();
@@ -80,15 +80,15 @@ export default function Home() {
           key={key}
         >
           {({ remainingTime }) => (
-            <div>
-              <input ref={hRef} style={{ width: "40px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0, color: `${isCanceled ? "black" : "white"}`, backgroundColor: `${isCanceled ? "white" : "transparent"}` }} placeholder={`${isCanceled ? "Hour" : ""}`} maxlength="2" value={isCanceled ? h : secondsToHms(remainingTime).h} disabled={isCanceled ? false : true} onChange={(e) => setH(e.target.value)}></input>
-              <input ref={mRef} style={{ width: "40px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0, color: `${isCanceled ? "black" : "white"}`, backgroundColor: `${isCanceled ? "white" : "transparent"}` }} placeholder={`${isCanceled ? "Minute" : ""}`} maxlength="2" pattern="[0-5]?[0-9]" value={isCanceled ? m : secondsToHms(remainingTime).m} disabled={isCanceled ? false : true} onChange={(e) => setM(e.target.value)}></input>
-              <input ref={sRef} style={{ width: "40px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0, color: `${isCanceled ? "black" : "white"}`, backgroundColor: `${isCanceled ? "white" : "transparent"}` }} placeholder={`${isCanceled ? "Second" : ""}`} maxlength="2" pattern="[0-5]?[0-9]" value={isCanceled ? s : secondsToHms(remainingTime).s} disabled={isCanceled ? false : true} onChange={(e) => setS(e.target.value)}></input>
-            </div>
+            <form>
+              <div>
+                <input ref={hRef} style={{ width: "50px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0, color: `${isCanceled ? "black" : "white"}`, backgroundColor: `${isCanceled ? "white" : "transparent"}` }} placeholder={`${isCanceled ? "H" : ""}`} maxlength="2" value={isCanceled ? h : secondsToHms(remainingTime).h} disabled={isCanceled ? false : true} onChange={(e) => setH(e.target.value)}></input>
+                <input ref={mRef} style={{ width: "50px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0, color: `${isCanceled ? "black" : "white"}`, backgroundColor: `${isCanceled ? "white" : "transparent"}` }} placeholder={`${isCanceled ? "M" : ""}`} maxlength="2" value={isCanceled ? m : secondsToHms(remainingTime).m} disabled={isCanceled ? false : true} onChange={(e) => setM(e.target.value)}></input>
+                <input ref={sRef} style={{ width: "50px", padding: 5, borderRadius: 10, margin: 5, fontSize: 30, textAlign: "center", border: 0, color: `${isCanceled ? "black" : "white"}`, backgroundColor: `${isCanceled ? "white" : "transparent"}` }} placeholder={`${isCanceled ? "S" : ""}`} maxlength="2" value={isCanceled ? s : secondsToHms(remainingTime).s} disabled={isCanceled ? false : true} onChange={(e) => setS(e.target.value)}></input>
+              </div>
+            </form>
           )}
         </CountdownCircleTimer>
-        <form style={{ position: "relative", top: "10%" }}>
-        </form>
         <div style={{ position: "relative", top: "15%" }}>
           <button onClick={handlePauseStart} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0 }} disabled={isCompleted ? true : false}>{isPlaying ? "Pause" : "Start"}</button>
           <button onClick={handleCancel} style={{ padding: "10px 20px", borderRadius: 10, margin: 5, fontSize: 20, border: 0 }} disabled={isPlaying ? true : false}>{isCompleted ? "Dismiss" : "Cancel"}</button>

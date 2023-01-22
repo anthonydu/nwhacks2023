@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const CreateTodo = ({ todos, setTodos }) => {
   const [todo, setTodo] = useState("");

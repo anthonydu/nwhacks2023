@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import CreateTodo from '@/components/Tasks/CreateTodo';
 import TodoList from '@/components/Tasks/TodoList';
 
-export default function Home() {
-  const [todos, setTodos] = useState([]);
+export default function Tasks() {
+  const [todos, setTodos] = useState(["Drag and drop to reorder", "Task priorities", "Due date for tasks"]);
   const [date, setDate] = useState(`${new Date().getHours()}:${("0" + new Date().getMinutes()).slice(-2)}`);
 
   useEffect(() => {
