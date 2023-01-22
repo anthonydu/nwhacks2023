@@ -11,9 +11,11 @@
   "dependencies": {
     "@livepeer/react": "^2.1.0",
     "@next/font": "13.1.4",
+    "bootstrap": "^5.2.3",
     "file-loader": "^6.2.0",
     "next": "13.1.4",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-countdown-circle-timer": "^3.1.0",
     "react-dom": "18.2.0",
     "react-pro-sidebar": "^1.0.0",

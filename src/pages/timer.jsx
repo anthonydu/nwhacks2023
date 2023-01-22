@@ -67,7 +67,7 @@ export default function Home() {
         <title>Timer - UnDUE</title>
       </Head>
       <main style={{ position: "fixed", top: 0, left: 0, height: "100%", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-        <p style={{ color: "white", fontSize: 30, position: "fixed", top: 100, left: "50%", transform: "translate(-50%, 0)" }}>{date}</p>
+        <p style={{ color: "white", fontSize: 30, position: "fixed", top: "10%", left: "50%", transform: "translate(-50%, 0)" }}>{date}</p>
         <CountdownCircleTimer
           isPlaying={isPlaying}
           duration={time}
